@@ -1,0 +1,100 @@
+Components Needed:
+In Proteus:
+
+Arduino Uno (from "ARDUINO" library)
+
+4 LEDs (any color)
+
+4 Resistors (220 ohms each)
+
+GND terminal
+
+Step-by-Step Instructions:
+Step 1: Open Proteus and Create a New Project
+Open Proteus and click on New Project.
+
+Give your project a name, and click Next until you reach the schematic capture stage.
+
+Step 2: Add Components
+Click on the 'P' (Pick Devices) button.
+
+Search and add the following:
+
+Arduino Uno R3
+
+LED-RED (or any LED)
+
+RES (for resistor)
+
+GND (from Terminal Mode)
+
+Step 3: Build the Circuit
+Connect each LED anode (long leg) to digital pins 13, 12, 11, and 10 of the Arduino.
+
+Connect a 220Ω resistor from each LED cathode (short leg) to GND.
+
+Optionally, you can use the GND terminal from the Proteus library to connect the other ends of resistors to GND.
+
+Circuit Mapping:
+
+Arduino Pin	LED	Resistor to GND
+D13	LED1	Yes
+D12	LED2	Yes
+D11	LED3	Yes
+D10	LED4	Yes
+
+Step 4: Write the Arduino Code
+
+// LED chase using digital pins 10 to 13
+int ledPins[] = {13, 12, 11, 10};  // Array to hold LED pins
+
+void setup() {
+  for (int i = 0; i < 4; i++) {
+    pinMode(ledPins[i], OUTPUT);  // Set each pin as output
+  }
+}
+
+void loop() {
+  for (int i = 0; i < 4; i++) {
+    digitalWrite(ledPins[i], HIGH);   // Turn LED on
+    delay(1000);                       // Wait
+    digitalWrite(ledPins[i], LOW);    // Turn LED off
+  }
+}
+Step 5: Upload Hex File to Proteus
+Open Arduino IDE.
+
+Copy and paste the code above in your Arduino ide.
+
+Select Board: Arduino Uno and Port (if needed).
+
+Click Sketch > Export Compiled Binary (this generates a .hex file).
+
+Go back to Proteus:
+
+Double-click the Arduino Uno.
+
+Browse and load the .hex file into the Program File field.
+
+Click OK.
+
+Step 6: Run Simulation
+Click the Play button in Proteus.
+
+The 4 LEDs should light up in sequence.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ChatGPT can
